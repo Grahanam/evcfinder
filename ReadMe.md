@@ -134,6 +134,6 @@ npx expo start
 
 ## Contact 
 
-For any inquiries or questions,please react out: 
+For any inquiries or questions,please reach out: 
 - [Gmail](mailto:lunasuthar5221@gmail.com)
 - [Linkedin](https://www.linkedin.com/in/lunaramsuthar/)
