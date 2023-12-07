@@ -161,6 +161,9 @@ const SceneAddProduct = ({navigation}) => {
                 onChangeText={newText => setdescription(newText)}
                 defaultValue={description}
             />
+            <View>
+                <Text>Select Category:</Text>
+            </View>
             <SelectList 
                 setSelected={setcategory} 
                 data={data2} 

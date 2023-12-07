@@ -39,9 +39,7 @@ router.post('/signup',async(req,res)=>{
 router.post('/login',async(req,res)=>{
     try{
         const {username,password}=req.body
-        console.log(req.body)
         const founduser=await userModel.findOne({username})
-        // console.log(founduser)
         if(founduser){
             const checkpass=await bcrypt.compare(password,founduser.password)
             if(checkpass){
