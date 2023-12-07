@@ -22,7 +22,7 @@ router.post('/signup',async(req,res)=>{
 
             const saveuser=await user.save()
             if(saveuser){
-                res.status(200).send(saveuser)
+                res.status(200).send({message:"success",user:saveuser})
             }else{
                 res.status(500).send({message:"user saving error"})
             }
@@ -39,6 +39,7 @@ router.post('/signup',async(req,res)=>{
 router.post('/login',async(req,res)=>{
     try{
         const {username,password}=req.body
+        console.log(req.body)
         const founduser=await userModel.findOne({username})
         // console.log(founduser)
         if(founduser){

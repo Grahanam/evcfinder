@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express=require('express')
 const mongoose=require('mongoose')
+const cors=require('cors')
 
 const app=express()
 const Port=process.env.port||4000
@@ -12,6 +13,7 @@ const productRoute=require('./routes/productRoute')
 
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
+app.use(cors())
 
 app.use('/',userRoute)
 app.use('/product',productRoute)

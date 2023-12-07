@@ -2,7 +2,7 @@ import { Link, Slot,Tabs } from "expo-router"
 import { StyleSheet, Text, View } from 'react-native';
 import { SessionProvider } from "../authprovider/ctx";
 import {Provider} from 'react-redux'
-import store from "../store";
+import store from "../src/store";
 export default function Root(){
     return(
         // <Provider store={store}>
