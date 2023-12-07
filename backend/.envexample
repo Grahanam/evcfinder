@@ -1,0 +1,4 @@
+
+mongoDBUrl=mongodbconnectionurl
+secretkey=mysecretkey
+BUCKET_URL=bucketurl

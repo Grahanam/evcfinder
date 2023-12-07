@@ -22,7 +22,6 @@ const SceneLogin = ({navigation}) => {
                 username:username,
                 password:password
             }
-            console.log(body)
             try{
                await dispatch(Authlogin(body))
             }catch(err){
@@ -40,6 +39,7 @@ const SceneLogin = ({navigation}) => {
     return(
         <DefaultPage>
             <Panel>
+             
             <View style={styles.form}> 
             <Text style={styles.heading}>Sign In</Text> 
             <TextInput
@@ -55,16 +55,22 @@ const SceneLogin = ({navigation}) => {
                 defaultValue={password}
                 secureTextEntry={true}
             />
-                <Button
+                {loading?(
+                    <Text>loading...</Text>
+                ):(
+                    <Button
                 title='Log In'
                 onPress={() => {
                     handlesignIn();
                     }}
                 />
+                )}
+                
                     <Text style={styles.label}>
                         New User? <Text style={styles.link} onPress={()=>{navigation.navigate('Signup')}}>Sign Up</Text>
                     </Text>
                 </View>
+
             </Panel>
         </DefaultPage>
     )

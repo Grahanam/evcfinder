@@ -76,13 +76,17 @@ const SceneSignup = ({navigation}) => {
                             secureTextEntry={true}
                             isRequired
                         />
-            
-                        <Button
+                        {loading?(
+                            <Text>loading...</Text>
+                        ):(
+                            <Button
                             title='Sign Up'
                             onPress={() => {
                             handlesignUp();
                             }}
-                        />
+                            />
+                        )}
+                        
                         <Text style={styles.label}>
                             Already a User? 
                             <Text style={styles.link} onPress={()=>{navigation.navigate('Login')}}>

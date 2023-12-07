@@ -5,7 +5,6 @@ import { View,Text } from 'react-native'
 import { useSelector } from 'react-redux'
 
 import SceneSplash from '../screens/auth/sceneSplash'
-import SceneAppLoading from '../screens/auth/screenAppLoading'
 import SceneHome from '../screens/auth/sceneHome'
 import SceneLogin from '../screens/auth/sceneLogin'
 import SceneAppHome from '../screens/app/sceneAppHome'
@@ -23,7 +22,6 @@ const Stack = createStackNavigator()
 
 const Navigation = () => {
       const {token,loading}=useSelector((state)=>state.auth)
-      console.log(token)
     return(
         <>
     <NavigationContainer>
@@ -42,7 +40,6 @@ const Navigation = () => {
             ):(
                 <>
                    <Stack.Screen name="Splash" component={SceneSplash} />
-                   <Stack.Screen name="AppLoading" component={SceneAppLoading} />
                    <Stack.Screen name="Login" component={SceneLogin} />
                    <Stack.Screen name="Signup" component={SceneSignup} />
                    <Stack.Screen name="Home" component={SceneHome} />
