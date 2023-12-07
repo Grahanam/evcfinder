@@ -9,11 +9,11 @@ import Panel from '../../components/Panel'
 const SceneSplash = ({navigation}) => {
     useEffect(() => {
         setTimeout(() => {
-            navigation.navigate('Home')
+            navigation.replace('Home')
         }, 2000)
     }, [])
     return(
-        <TouchableWithoutFeedback onPress={() =>  navigation.navigate('Home')}>
+        <TouchableWithoutFeedback onPress={() =>  navigation.replace('Home')}>
         <View style={styles.page}>
             <View style={styles.titleBox}>
                 <Text style={styles.txt}>WELCOME!</Text>

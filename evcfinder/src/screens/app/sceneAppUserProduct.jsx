@@ -23,14 +23,14 @@ const SceneUserProduct = ({navigation}) => {
           navigation.navigate('HomeAddProduct',{product})
     }
     useEffect(()=>{
-        if(updatesuccess){
-            dispatch(changeupdatesuccess())
-            dispatch(fetchUserProducts(uId))
-        }
+        // if(updatesuccess){
+        //     dispatch(changeupdatesuccess())
+        //     dispatch(fetchUserProducts(uId))
+        // }
         if(deletesuccess){
             Alert.alert('Product',deletemessage)
             dispatch(changedeletesuccess())
-            dispatch(fetchUserProducts(uId))
+            // dispatch(fetchUserProducts(uId))
         }
         dispatch(fetchUserProducts(uId))
     },[deletesuccess,deletemessage])
@@ -46,7 +46,7 @@ const SceneUserProduct = ({navigation}) => {
                 {userproducts.length>0?(
             <>
             {userproducts.map((product,index)=>(
-                <>
+                
                 <View style={{width:'100%'}} key={index}>
                 <ProductCard product={product}/>
                 <View style={{width:'100%',marginTop:-5, flexDirection:'row',alignItems:'flex-end',justifyContent:'space-between', marginBottom:6}}>
@@ -57,10 +57,8 @@ const SceneUserProduct = ({navigation}) => {
                     <Button title='delete' onPress={()=>handledelete(product)}/>
                     </>
                     )}
-                    
                 </View>
                 </View>
-                </>
             ))}
             </>
            ):(

@@ -67,7 +67,7 @@ const SceneLogin = ({navigation}) => {
                 )}
                 
                     <Text style={styles.label}>
-                        New User? <Text style={styles.link} onPress={()=>{navigation.navigate('Signup')}}>Sign Up</Text>
+                        New User? <Text style={styles.link} onPress={()=>{navigation.replace('Signup')}}>Sign Up</Text>
                     </Text>
                 </View>
 

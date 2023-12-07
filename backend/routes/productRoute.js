@@ -62,33 +62,29 @@ router.get('/all',async(req,res)=>{
 router.put('/',upload.single('file'),async(req,res)=>{
     try{
         if(!req.file){
-            console.log(req.body)
             const product=await productModel.findByIdAndUpdate(req.body._id,req.body,{new:true})
-            // res.status(200).json({data:req.body,message:'success'})
-            return res.status(200).json({data:product,message:'Product Updated Successfully'})
+            res.status(200).json({data:product,message:`${product.title} Updated!`})
           }else{
 
-            // const product=await productModel.findById(req.body._id)
+            const product=await productModel.findById(req.body._id)
 
-            // await bucket.file(product.image.filepath).delete()
+            await bucket.file(product.image.filepath).delete()
             
-            // const filename = `evcfinder/product_img/${Date.now()}_${req.file.originalname}`;
-            // const uuid=UUID()
-            // const fileURL = await uploadFile(req.file.buffer, filename, req.file.mimetype,uuid);
-            // const image={
-            //    url:fileURL,
-            //    filepath:filename
-            // }
-            // product.title=req.body.title
-            // product.category=req.body.category,
-            // product.price=req.body.price,
-            // product.description=req.body.description,
-            // product.image=image
-            // const updateproduct=await productModel.findByIdAndUpdate(product._id,product,{new:true})
-            return res.status(200).json({data:req.body,message:'success'})
-            // return res.status(200).json({data:updateproduct,message:'Product Updated Successfully'})
+            const filename = `evcfinder/product_img/${Date.now()}_${req.file.originalname}`;
+            const uuid=UUID()
+            const fileURL = await uploadFile(req.file.buffer, filename, req.file.mimetype,uuid);
+            const image={
+               url:fileURL,
+               filepath:filename
+            }
+            product.title=req.body.title
+            product.category=req.body.category,
+            product.price=req.body.price,
+            product.description=req.body.description,
+            product.image=image
+            const updateproduct=await productModel.findByIdAndUpdate(product._id,product,{new:true})
+            res.status(200).json({data:updateproduct,message:`${product.title} Updated!`})
           }
-        //   res.status(200).json({message:'Product Updated Successfully'})
 
     }catch(err){
         console.log(err)

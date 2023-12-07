@@ -99,7 +99,6 @@ export const productSlice=createSlice({
           })
           builder.addCase(createProduct.fulfilled, (state, action) => {
             const payload=action.payload
-            console.log(payload)
             if(payload.data){
                 state.createsuccess=true
                 state.createmessage=payload.message
@@ -119,7 +118,6 @@ export const productSlice=createSlice({
           })
           builder.addCase(updateProduct.fulfilled, (state, action) => {
             const payload=action.payload
-            console.log(payload)
             if(payload.data){
                 state.updatesuccess=true
                 state.updatemessage=payload.message

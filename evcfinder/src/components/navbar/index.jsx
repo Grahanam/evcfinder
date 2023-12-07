@@ -20,7 +20,7 @@ const BottomNavBar = ({ navigation }) => (
                     color="lightblue"
                 />
             )}
-            onPress={() => navigation.navigate('HomeAllProduct')}
+            onPress={() => navigation.replace('HomeAllProduct')}
         />
 
         <Button
@@ -33,7 +33,7 @@ const BottomNavBar = ({ navigation }) => (
                     color="lightblue"
                 />
             )}
-            onPress={() => navigation.navigate('HomeApparel',{categoryName:'Apparel'})}
+            onPress={() => navigation.replace('HomeApparel',{categoryName:'Apparel'})}
         />
 
         <Button
@@ -46,7 +46,7 @@ const BottomNavBar = ({ navigation }) => (
                     color="lightblue"
                 />
             )}
-            onPress={() => navigation.navigate('HomeSport',{categoryName:'Sport'})}
+            onPress={() => navigation.replace('HomeSport',{categoryName:'Sport'})}
         />
         <Button
             title="Books"
@@ -58,7 +58,7 @@ const BottomNavBar = ({ navigation }) => (
                     color="lightblue"
                 />
             )}
-            onPress={() => navigation.navigate('HomeBook',{categoryName:'Book'})}
+            onPress={() => navigation.replace('HomeBook',{categoryName:'Book'})}
         />
     </View>
 )

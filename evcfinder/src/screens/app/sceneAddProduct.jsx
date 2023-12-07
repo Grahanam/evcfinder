@@ -121,8 +121,8 @@ const SceneAddProduct = ({navigation}) => {
 
         if(updatesuccess){
             Alert.alert('Product',updatemessage)
-            // dispatch(changeupdatesuccess())
-            navigation.navigate('HomeUserProduct')
+            dispatch(changeupdatesuccess())
+            navigation.replace('HomeUserProduct')
             
         }
 
